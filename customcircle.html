@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+
+	<canvas id="sketch" width="500" height="500">
+	</canvas>
+
+	<script>
+		function draw() {
+		 	var sketch = document.getElementById('sketch');
+			var context = sketch.getContext("2d");
+
+
+			var str_radius = prompt("Gimme a radius less than 250: ");
+			var int_radius = parseInt(str_radius);
+
+
+			var str_rgb = prompt("Do you like Red, Green or Blue?");
+			if (str_rgb == "Red" || str_rgb == "RED" || str_rgb == "red") {
+				context.fillStyle = ("#ff0000");
+				context.beginPath();
+				context.arc(250, 120, int_radius, 0, 2 * Math.PI, true);
+				context.closePath();
+				context.fill();
+			}
+			if (str_rgb == "Green" || str_rgb == "GREEN" || str_rgb == "green") {
+				context.fillStyle = ("#00ff00");
+				context.beginPath();
+				context.arc(250, 120, int_radius, 0, 2 * Math.PI, true);
+				context.closePath();
+				context.fill();
+			}
+			if (str_rgb == "Blue" || str_rgb == "BLUE" || str_rgb == "blue") {
+				context.fillStyle = ("#0000ff");
+				context.beginPath();
+				context.arc(250, 250, int_radius, 0, 2 * Math.PI, true);
+				context.closePath();
+				context.fill();
+			}
+			else {
+				document.write("Thanks. You screwed up my program. Reload.")
+				console.log("Thanks. You screwed up my program. Reload.")
+			}
+			}
+
+	</script>
+
+</body>
+</html>
